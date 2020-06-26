@@ -17,8 +17,14 @@ $ TODO
 
 ### Numbers
 ```
-> 1..9
-$ seq 1 9
+# 1 2 3 4 5 6 7 8 9 10
+> 1..10
+$ seq 1 10
+$ echo {1..10} # inline version
+
+# 01 02 03 04 05 06 07 08 09 10
+> 1..10 | % tostring 00
+$ seq -w 1 10
 ```
 
 ### Ascii characters
