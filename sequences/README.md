@@ -14,7 +14,6 @@ $ Bash prompt
 $ TODO
 ```
 
-
 ### Numbers
 ```
 # 1 2 3 4 5 6 7 8 9 10
@@ -27,19 +26,23 @@ $ echo {1..10} # inline version
 $ seq -w 1 10
 ```
 
-### Ascii characters
+### All printable Ascii characters
 ```
-> TODO
-$ echo -e \\x{21..79} | tr " " "\n
+> 33..126 | %{"$([char]$_)"}
+$ echo {\!..\~} | tr " " "\\n"
 ```
 
 ### Phone numbers
 ```
-# in +420602xxxxxx format
-> TODO
-$ echo +420602{000000..999999} | tr " " "\n
+# Czech O2 exmaple in 602xxxxxx format
+> 0..999999 | % tostring 602000000
+$ echo 602{000000..999999} | tr " " "\n
 
 # in +420-602-xxx-xxx format
-> TODO
-$ echo 420-602-{000..999}-{000..999} | tr " " "\n
+> 0..999999 | % tostring +420-602-000-000
+$ echo +420-602-{000..999}-{000..999} | tr " " "\n
+
+# in +420 602 xxx xxx format
+> 0..999999 | % tostring "+420 602 000 000"
+$ echo "+420 602 "{000..999}" "{000..999}";" | tr ";" "\\n"
 ```
