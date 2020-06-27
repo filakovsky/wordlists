@@ -2,9 +2,9 @@
 
 the meaning of following characters
 ```
+# Comment
 > PowerShell prompt
 $ Bash prompt
-# Comment
 ```
 
 ### Output filtering
